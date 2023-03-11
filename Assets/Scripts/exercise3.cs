@@ -6,28 +6,30 @@ using TMPro;
 public class exercise3 : MonoBehaviour
 
 {
-    public TextMeshProUGUI valueText; // referencia al componente TextMeshProUGUI donde se mostrará el valor
-    private int value = 0; // inicializa el valor en 0
+    private int value = 0;
+    public TextMeshProUGUI valueText;
 
-    // este método se ejecutará cada vez que se presione el botón "up"
-    public void IncreaseValue()
+
+    // esta funcion actualizará el valor que haya en pantalla
+    private void UpdateValueText()
     {
-        value += 1; // agrega 1 al valor actual
-        UpdateValueText(); // actualiza el valor en el objeto TextMeshProUGUI
+        valueText.text = "Value: " + value.ToString();
     }
 
-    // este método se ejecutará cada vez que se presione el botón "down"
+    // esta funcion sumará 1 cada vez que presiones el botón "up"
+    public void IncreaseValue()
+    {
+        value += 1; // suma 1 al valor actual
+        UpdateValueText(); // actualiza el valor del número que haya
+    }
+
+    // esta funcion restará 1 cada vez que presiones el botón "down"
     public void DecreaseValue()
     {
         value -= 1; // resta 1 al valor actual
-        UpdateValueText(); // actualiza el valor en el objeto TextMeshProUGUI
+        UpdateValueText(); // actualiza el valor del número que haya
     }
 
-    // este método actualizará el valor en el objeto TextMeshProUGUI
-    private void UpdateValueText()
-    {
-        valueText.text = "Value: " + value.ToString(); // actualiza el texto en el objeto TextMeshProUGUI
-    }
 }
 
     

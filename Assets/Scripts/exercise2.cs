@@ -6,7 +6,6 @@ using TMPro;
 public class exercise2 : MonoBehaviour
 {
     public int counter = 0;
-
     public TextMeshProUGUI text;
 
     private void Start()
@@ -15,11 +14,11 @@ public class exercise2 : MonoBehaviour
     }
     public IEnumerator Timer()
     {
-        while (true)
+        while (true) // bucle infinito
         {
-            yield return new WaitForSeconds(1);
-            text.text = $"{counter}";
-            counter++;
+            yield return new WaitForSeconds(1); // espera 1 segundos antes de sumar 1 al contador
+            text.text = $"{counter}"; // el texto que aparecera en pantalla
+            counter++; 
         }
     }
 }
